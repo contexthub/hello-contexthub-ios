@@ -8,10 +8,24 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
-#import  <UIKit/UIKit.h>
-#import "CCHElementManifestService.h"
+#import <UIKit/UIKit.h>
+
+// Public Headers
+#import "CCHBeaconService.h"
+#import "CCHContextEventManager.h"
+#import "CCHDeviceInformationService.h"
 #import "CCHDevicesService.h"
+#import "CCHElementManifestService.h"
+#import "CCHElementServiceLocator.h"
+#import "CCHElementServiceProtocol.h"
+#import "CCHGeofenceService.h"
+#import "CCHLocationService.h"
+#import "CCHMotionService.h"
+#import "CCHNotificationService.h"
 #import "CCHSubscriptionResourceChangeHandler.h"
+#import "CCHSubscriptionService.h"
+#import "CCHVaultResource.h"
+#import "CCHVaultService.h"
 
 /**
  * The primary interface with the ContextHub Black SDK
