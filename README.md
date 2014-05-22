@@ -19,7 +19,7 @@ The hello world sample app.
     <Link to Docs about these>
     
 
-## app.contexthub.com
+## ContextHub.com
 
 1. on app.contexthub.com click on the hello world app
 1. notice that you have a context named <CONTXTNAMEHERE>
@@ -32,7 +32,7 @@ The hello world sample app.
 1. stop and start the app in the simulator.
 1. check out the vault
 
-## Creating a new rule
+## Creating a New Rule
 
 1. create a geofence_in rule
 1. tap the +geofence button
@@ -40,3 +40,4 @@ The hello world sample app.
 1. simulate a location change
 1. go back to previous location
 1. you have a new event, no code needed :)
+BONUS: Create a geofence_out rule

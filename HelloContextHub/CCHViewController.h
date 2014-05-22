@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <ContextHub/ContextHub.h>
+#import <MapKit/MapKit.h>
 
 @interface CCHViewController : UIViewController
 

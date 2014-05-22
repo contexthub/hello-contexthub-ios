@@ -9,7 +9,7 @@
 #import "CCHViewController.h"
 
 @interface CCHViewController ()
-
+@property (nonatomic, weak) IBOutlet MKMapView *mapView;
 @end
 
 @implementation CCHViewController
@@ -26,4 +26,18 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)createDefaultGeofenceTapped:(id)sender{
+    [self createSampleGeofence];
+}
+
+- (void)createSampleGeofence {
+    
+//    CLLocationCoordinate2D center = CLLocationCoordinate2DMake(95.0, -30.0);
+    CLLocationDistance radius = 1000;
+    CLCircularRegion *geofence = [[CLCircularRegion alloc] initWithCenter:self.mapView.centerCoordinate radius:radius identifier:@"sample"];
+
+    [CCHGeofenceService createGeofence:geofence completion:^(NSDictionary *fenceInfo, NSError *error) {
+        NSLog(@"Fence Info %@", fenceInfo);
+    }];
+}
 @end
