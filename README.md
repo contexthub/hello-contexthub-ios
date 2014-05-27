@@ -4,19 +4,20 @@ The hello world sample app.
 
 ## Getting Started
 
-1. fork
-1. clone
-1. app id
-1. build
-1. run in simulator
+1. fork the repository
+1. clone the repository
+1. Add your app id In the HelloContextHubAppDelegate
+1. build the project
+1. run the project in the simulator
 
 ## Xcode Console
 
 1. keep an eye on the console output
 1. you'll see that the app has detected a locaiton change event
 1. Take a look at the app delegate
-1. you'll see the Event Manager Delegate and Data Source protocols have been implemented. 
-    <Link to Docs about these>
+1. you'll see the Event Manager Delegate and Data Source protocols have been implemented.  <Link to Docs about these>
+1. 
+
     
 
 ## ContextHub.com
