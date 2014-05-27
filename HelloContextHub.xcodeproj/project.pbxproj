@@ -156,7 +156,7 @@
 		3DD17262192D3AC900D13CE7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = CCH;
+				CLASSPREFIX = HCH;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Context Hub";
 			};
