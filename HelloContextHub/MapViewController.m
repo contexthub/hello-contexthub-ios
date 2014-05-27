@@ -1,18 +1,18 @@
 //
-//  CCHViewController.m
+//  MapViewController.m
 //  HelloContextHub
 //
 //  Created by Kevin Lee on 5/21/14.
 //  Copyright (c) 2014 Context Hub. All rights reserved.
 //
 
-#import "CCHViewController.h"
+#import "MapViewController.h"
 
-@interface CCHViewController ()
+@interface MapViewController ()
 @property (nonatomic, weak) IBOutlet MKMapView *mapView;
 @end
 
-@implementation CCHViewController
+@implementation MapViewController
 
 - (void)viewDidLoad
 {
@@ -32,12 +32,15 @@
 
 - (void)createSampleGeofence {
     
-//    CLLocationCoordinate2D center = CLLocationCoordinate2DMake(95.0, -30.0);
-    CLLocationDistance radius = 1000;
+    CLLocationDistance radius = 100;
     CLCircularRegion *geofence = [[CLCircularRegion alloc] initWithCenter:self.mapView.centerCoordinate radius:radius identifier:@"sample"];
 
     [CCHGeofenceService createGeofence:geofence completion:^(NSDictionary *fenceInfo, NSError *error) {
-        NSLog(@"Fence Info %@", fenceInfo);
+        if (error) {
+            NSLog(@"There was an error while creating the geofence %@", error);
+        } else {
+            NSLog(@"Fence Info Response from ContextHub %@", fenceInfo);
+        }
     }];
 }
 @end

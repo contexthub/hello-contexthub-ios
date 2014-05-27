@@ -1,5 +1,5 @@
 //
-//  CCHAppDelegate.h
+//  HellowcontextHubAppDelegate.m
 //  HelloContextHub
 //
 //  Created by Kevin Lee on 5/21/14.

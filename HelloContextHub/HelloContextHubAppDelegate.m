@@ -1,5 +1,5 @@
 //
-//  CCHAppDelegate.m
+//  HellowcontextHubAppDelegate.m
 //  HelloContextHub
 //
 //  Created by Kevin Lee on 5/21/14.
@@ -14,8 +14,16 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     //Register your app id
-    [ContextHub registerWithAppId:@"9629bd80-2db1-420a-bc61-a8a1008ef292"];
+    [ContextHub registerWithAppId:@"YOUR-APP-ID-GOES-HERE"];
+    
+    //The context event manager registers contexts and sends event data to the server.
+    
+    //The delegate will be called during the lifecycle of sending context events to the server.
     [[CCHContextEventManager sharedManager] setDelegate:self];
+    
+    //Use the datasource methods if you would like to add your own payload to the context event.
+    [[CCHContextEventManager sharedManager] setDataSource:self];
+
     return YES;
 }
 							

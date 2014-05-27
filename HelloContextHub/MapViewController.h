@@ -1,5 +1,5 @@
 //
-//  CCHViewController.h
+//  MapViewController.h
 //  HelloContextHub
 //
 //  Created by Kevin Lee on 5/21/14.
@@ -10,6 +10,6 @@
 #import <ContextHub/ContextHub.h>
 #import <MapKit/MapKit.h>
 
-@interface CCHViewController : UIViewController
+@interface MapViewController : UIViewController
 
 @end

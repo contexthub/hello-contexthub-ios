@@ -16,7 +16,7 @@
 		3DD1727A192D3AC900D13CE7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD17279192D3AC900D13CE7 /* main.m */; };
 		3DD1727E192D3AC900D13CE7 /* HelloContextHubAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD1727D192D3AC900D13CE7 /* HelloContextHubAppDelegate.m */; };
 		3DD17281192D3AC900D13CE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DD1727F192D3AC900D13CE7 /* Main.storyboard */; };
-		3DD17284192D3AC900D13CE7 /* CCHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD17283192D3AC900D13CE7 /* CCHViewController.m */; };
+		3DD17284192D3AC900D13CE7 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD17283192D3AC900D13CE7 /* MapViewController.m */; };
 		3DD17286192D3AC900D13CE7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DD17285192D3AC900D13CE7 /* Images.xcassets */; };
 		3DD172B3192D413300D13CE7 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DD172B2192D413300D13CE7 /* CoreMotion.framework */; };
 		3DD172B5192D413B00D13CE7 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DD172B4192D413B00D13CE7 /* MobileCoreServices.framework */; };
@@ -39,8 +39,8 @@
 		3DD1727C192D3AC900D13CE7 /* HelloContextHubAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloContextHubAppDelegate.h; sourceTree = "<group>"; };
 		3DD1727D192D3AC900D13CE7 /* HelloContextHubAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloContextHubAppDelegate.m; sourceTree = "<group>"; };
 		3DD17280192D3AC900D13CE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3DD17282192D3AC900D13CE7 /* CCHViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCHViewController.h; sourceTree = "<group>"; };
-		3DD17283192D3AC900D13CE7 /* CCHViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCHViewController.m; sourceTree = "<group>"; };
+		3DD17282192D3AC900D13CE7 /* MapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		3DD17283192D3AC900D13CE7 /* MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		3DD17285192D3AC900D13CE7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3DD1728C192D3AC900D13CE7 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		3DD172B2192D413300D13CE7 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
@@ -111,8 +111,8 @@
 				3DD1727C192D3AC900D13CE7 /* HelloContextHubAppDelegate.h */,
 				3DD1727D192D3AC900D13CE7 /* HelloContextHubAppDelegate.m */,
 				3DD1727F192D3AC900D13CE7 /* Main.storyboard */,
-				3DD17282192D3AC900D13CE7 /* CCHViewController.h */,
-				3DD17283192D3AC900D13CE7 /* CCHViewController.m */,
+				3DD17282192D3AC900D13CE7 /* MapViewController.h */,
+				3DD17283192D3AC900D13CE7 /* MapViewController.m */,
 				3DD17285192D3AC900D13CE7 /* Images.xcassets */,
 				3DD17274192D3AC900D13CE7 /* Supporting Files */,
 			);
@@ -198,7 +198,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DD1727A192D3AC900D13CE7 /* main.m in Sources */,
-				3DD17284192D3AC900D13CE7 /* CCHViewController.m in Sources */,
+				3DD17284192D3AC900D13CE7 /* MapViewController.m in Sources */,
 				3DD1727E192D3AC900D13CE7 /* HelloContextHubAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
