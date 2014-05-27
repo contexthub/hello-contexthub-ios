@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-#import "CCHAppDelegate.h"
+#import "HelloContextHubAppDelegate.h"
 
 int main(int argc, char * argv[])
 {
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([CCHAppDelegate class]));
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([HelloContextHubAppDelegate class]));
     }
 }
