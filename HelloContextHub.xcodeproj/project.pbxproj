@@ -18,27 +18,12 @@
 		3DD17281192D3AC900D13CE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DD1727F192D3AC900D13CE7 /* Main.storyboard */; };
 		3DD17284192D3AC900D13CE7 /* CCHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD17283192D3AC900D13CE7 /* CCHViewController.m */; };
 		3DD17286192D3AC900D13CE7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DD17285192D3AC900D13CE7 /* Images.xcassets */; };
-		3DD1728D192D3AC900D13CE7 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DD1728C192D3AC900D13CE7 /* XCTest.framework */; };
-		3DD1728E192D3AC900D13CE7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DD1726D192D3AC900D13CE7 /* Foundation.framework */; };
-		3DD1728F192D3AC900D13CE7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DD17271192D3AC900D13CE7 /* UIKit.framework */; };
-		3DD17297192D3AC900D13CE7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3DD17295192D3AC900D13CE7 /* InfoPlist.strings */; };
-		3DD17299192D3AC900D13CE7 /* HelloContextHubTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD17298192D3AC900D13CE7 /* HelloContextHubTests.m */; };
 		3DD172B3192D413300D13CE7 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DD172B2192D413300D13CE7 /* CoreMotion.framework */; };
 		3DD172B5192D413B00D13CE7 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DD172B4192D413B00D13CE7 /* MobileCoreServices.framework */; };
 		3DD172B7192D414400D13CE7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DD172B6192D414400D13CE7 /* CoreLocation.framework */; };
 		3DD172B9192D414900D13CE7 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DD172B8192D414900D13CE7 /* CoreBluetooth.framework */; };
 		3DD172C7192E398D00D13CE7 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DD172C6192E398D00D13CE7 /* MapKit.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		3DD17290192D3AC900D13CE7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3DD17262192D3AC900D13CE7 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3DD17269192D3AC900D13CE7;
-			remoteInfo = HelloContextHub;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		3D2CBE53192E7D6E00E0117A /* ContextHub.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ContextHub.framework; sourceTree = "<group>"; };
@@ -57,11 +42,7 @@
 		3DD17282192D3AC900D13CE7 /* CCHViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCHViewController.h; sourceTree = "<group>"; };
 		3DD17283192D3AC900D13CE7 /* CCHViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCHViewController.m; sourceTree = "<group>"; };
 		3DD17285192D3AC900D13CE7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		3DD1728B192D3AC900D13CE7 /* HelloContextHubTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelloContextHubTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DD1728C192D3AC900D13CE7 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		3DD17294192D3AC900D13CE7 /* HelloContextHubTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HelloContextHubTests-Info.plist"; sourceTree = "<group>"; };
-		3DD17296192D3AC900D13CE7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		3DD17298192D3AC900D13CE7 /* HelloContextHubTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloContextHubTests.m; sourceTree = "<group>"; };
 		3DD172B2192D413300D13CE7 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		3DD172B4192D413B00D13CE7 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		3DD172B6192D414400D13CE7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -86,16 +67,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3DD17288192D3AC900D13CE7 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3DD1728D192D3AC900D13CE7 /* XCTest.framework in Frameworks */,
-				3DD1728F192D3AC900D13CE7 /* UIKit.framework in Frameworks */,
-				3DD1728E192D3AC900D13CE7 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -104,7 +75,6 @@
 			children = (
 				3D2CBE55192E841B00E0117A /* README.md */,
 				3DD17273192D3AC900D13CE7 /* HelloContextHub */,
-				3DD17292192D3AC900D13CE7 /* HelloContextHubTests */,
 				3DD1726C192D3AC900D13CE7 /* Frameworks */,
 				3DD1726B192D3AC900D13CE7 /* Products */,
 			);
@@ -114,7 +84,6 @@
 			isa = PBXGroup;
 			children = (
 				3DD1726A192D3AC900D13CE7 /* HelloContextHub.app */,
-				3DD1728B192D3AC900D13CE7 /* HelloContextHubTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -161,24 +130,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		3DD17292192D3AC900D13CE7 /* HelloContextHubTests */ = {
-			isa = PBXGroup;
-			children = (
-				3DD17298192D3AC900D13CE7 /* HelloContextHubTests.m */,
-				3DD17293192D3AC900D13CE7 /* Supporting Files */,
-			);
-			path = HelloContextHubTests;
-			sourceTree = "<group>";
-		};
-		3DD17293192D3AC900D13CE7 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				3DD17294192D3AC900D13CE7 /* HelloContextHubTests-Info.plist */,
-				3DD17295192D3AC900D13CE7 /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -199,24 +150,6 @@
 			productReference = 3DD1726A192D3AC900D13CE7 /* HelloContextHub.app */;
 			productType = "com.apple.product-type.application";
 		};
-		3DD1728A192D3AC900D13CE7 /* HelloContextHubTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3DD1729F192D3AC900D13CE7 /* Build configuration list for PBXNativeTarget "HelloContextHubTests" */;
-			buildPhases = (
-				3DD17287192D3AC900D13CE7 /* Sources */,
-				3DD17288192D3AC900D13CE7 /* Frameworks */,
-				3DD17289192D3AC900D13CE7 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				3DD17291192D3AC900D13CE7 /* PBXTargetDependency */,
-			);
-			name = HelloContextHubTests;
-			productName = HelloContextHubTests;
-			productReference = 3DD1728B192D3AC900D13CE7 /* HelloContextHubTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -226,11 +159,6 @@
 				CLASSPREFIX = CCH;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Context Hub";
-				TargetAttributes = {
-					3DD1728A192D3AC900D13CE7 = {
-						TestTargetID = 3DD17269192D3AC900D13CE7;
-					};
-				};
 			};
 			buildConfigurationList = 3DD17265192D3AC900D13CE7 /* Build configuration list for PBXProject "HelloContextHub" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -246,7 +174,6 @@
 			projectRoot = "";
 			targets = (
 				3DD17269192D3AC900D13CE7 /* HelloContextHub */,
-				3DD1728A192D3AC900D13CE7 /* HelloContextHubTests */,
 			);
 		};
 /* End PBXProject section */
@@ -263,14 +190,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3DD17289192D3AC900D13CE7 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3DD17297192D3AC900D13CE7 /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -284,23 +203,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3DD17287192D3AC900D13CE7 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3DD17299192D3AC900D13CE7 /* HelloContextHubTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		3DD17291192D3AC900D13CE7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 3DD17269192D3AC900D13CE7 /* HelloContextHub */;
-			targetProxy = 3DD17290192D3AC900D13CE7 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		3DD17276192D3AC900D13CE7 /* InfoPlist.strings */ = {
@@ -317,14 +220,6 @@
 				3DD17280192D3AC900D13CE7 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		3DD17295192D3AC900D13CE7 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3DD17296192D3AC900D13CE7 /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -436,46 +331,6 @@
 			};
 			name = Release;
 		};
-		3DD172A0192D3AC900D13CE7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HelloContextHub.app/HelloContextHub";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "HelloContextHub/HelloContextHub-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "HelloContextHubTests/HelloContextHubTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		3DD172A1192D3AC900D13CE7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HelloContextHub.app/HelloContextHub";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "HelloContextHub/HelloContextHub-Prefix.pch";
-				INFOPLIST_FILE = "HelloContextHubTests/HelloContextHubTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -493,15 +348,6 @@
 			buildConfigurations = (
 				3DD1729D192D3AC900D13CE7 /* Debug */,
 				3DD1729E192D3AC900D13CE7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		3DD1729F192D3AC900D13CE7 /* Build configuration list for PBXNativeTarget "HelloContextHubTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3DD172A0192D3AC900D13CE7 /* Debug */,
-				3DD172A1192D3AC900D13CE7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
