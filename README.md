@@ -1,4 +1,4 @@
-# Hello Context Hub
+# Hello ContextHub!
 ========================
 
 The "Hello ContextHub" sample app that introduces you to the features of the ContextHub iOS SDK and developer portal
@@ -7,11 +7,9 @@ The "Hello ContextHub" sample app that introduces you to the features of the Con
 
 Today's world is full of devices and sensors just waiting to be tapped into. Meaningful events happen all the time, when we get home from work, approach an interesting painting, or visit our favorite coffee shop. ContextHub takes those meaningful events in our lives and transforms them into powerful triggers your apps can respond to turn apps into experiences for your end users. 
 
-In this sample application, we use ContextHub introduce the relationship between devices triggering events on the server by setting up geofences on a map. 
-
 ## ContextHub
 
-ContextHub takes care of setting up and monitoring geofences to generate events to server can listen and respond to.
+In this sample application, we use ContextHub introduce the relationship between devices triggering events on the server by setting up geofences on a map. ContextHub takes care of setting up and monitoring geofences to generate events that the server can listen and respond to and then save those events in a vault to be accessed later.
 
 ## Getting Started
 
@@ -40,7 +38,7 @@ Context rules let you change how the server will respond to events triggered by 
 
 ## Creating a New Rule
 
-1. In the "Contexts" tab, click the "NEW CONTEXT" button to start making a new rule.
+1. In the "Contexts" tab, click the "New Context" button to start making a new rule.
 2. Enter a name for this context which will be easy for you to remember. For now, name it "Geofence in".
 3. Change the event type to `"geofence_in"`. Now any event of type `"geofence_in"` will trigger this rule. You can have multiple rules with the same event type, which is why name of events should be descriptive of the rule.
 4. Below at the left is where you can write a rule telling ContextHub what actions to take in response to an event triggered with a specific event type. This code is Javascript, and you have access to 3 objects: event, push and vault. For now, click on the dropdown box and select `"Always execute"` then click save.
