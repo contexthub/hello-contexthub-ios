@@ -14,7 +14,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     //Register your app id
-    [ContextHub registerWithAppId:@"YOUR-APP-ID-GOES-HERE"];
+    [ContextHub registerWithAppId:@"13e7e6b4-9f33-4e97-b11c-79ed1470fc1d"];
     
     //The context event manager registers contexts and sends event data to the server.
     
