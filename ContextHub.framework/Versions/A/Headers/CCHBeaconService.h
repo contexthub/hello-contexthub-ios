@@ -1,5 +1,5 @@
 //
-//  CCBBeaconService.h
+//  CCHBeaconService.h
 //  ContextHub
 //
 //  Created by Kevin Lee on 11/7/13.
@@ -9,94 +9,100 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 
+#define kBeaconErrorDomain @"com.contexthub.beaconservice.error"
+
 /**
- The beacon servers is used to retrive iBeacons that have been created on the ContextHub server.
+ ContextHub BeaconService error codes.
+ */
+typedef NS_ENUM(NSInteger, CCHBeaconServiceErrorCode) {
+    /**
+     The Dictionary can't be used to create a beacon.
+     */
+    CCHInvalidBeaconDictionary,
+    /**
+     UUID cannot be nil and must be  a valid NSUUID.
+     */
+    CCHInvalidBeaconUUIDParameter,
+    /**
+     Name cannot be nil.
+     */
+    CCHInvalidBeaconNameParameter,
+    /**
+     Beacon id cannot be nil.
+     */
+    CCHInvalidBeaconIdParameter
+};
+
+/**
+ The Beacon Service is used to create, read, update, and delete beacons on ContextHub.
+ 
+ Structure of the beacon NSDictionary
+ | key   | value |
+ | ----- | ----- |
+ | id    | unique id of the beacon on the ContextHub server |
+ | name  | name of the beacon |
+ | uuid  | UUID of the beacon |
+ | major | major value of the beacon |
+ | minor | minor value of the beacon |
+ | tags  | NSArray of tags associated with the beacon |
+ 
  */
 @interface CCHBeaconService : NSObject
-/**
- This method will return Global beacons.  Beacons without tags are considered global beacons.
- @param success executed when the network request completes without errors.  The success param is passed an array of NSDictionary objects that represent iBeacons.
- @param failure executed when the network request fails.  The session and error are passed to the failure block.
- */
-+ (void)getBeaconsWithSuccess:(void(^)(NSArray *beacons))success
-                      failure:(void(^)(NSError *error))failure;
 
 /**
- The method we return all beacons.
- @param success executed when the network request completes without errors.  The success param is passed an array of NSDictionary objects that represent iBeacons.
- @param failure executed when the network request fails.  The session and error are passed to the failure block.
+ @return The singleton instance of the CCHBeaconService.
  */
-+ (void)getAllBeaconsWithSuccess:(void(^)(NSArray *beacons))success
-                         failure:(void(^)(NSError *error))failure;
++ (instancetype)sharedInstance;
 
 /**
- @param beaconId id of the iBeacon stored in ContextHub
- @param success executed when the network request completes without errors.  The success param is passed an array of NSDictionary objects that represent iBeacons.
- @param failure executed when the network request fails.  The session and error are passed to the failure block.
+ Creates a new beacon on the ContextHub server.
+ @note Tags are used to filter beacons and are used by the CCHSubscriptionService.
+ 
+ @param proximityUUID The uuid for the iBeacon.
+ @param major (optional) The major value for the iBeacon.
+ @param minor (optional) The minor value for the iBeacon.
+ @param name The name of the iBeacon.
+ @param tags (optional) The tags to be applied to the beacon.
+ @param completionHandler (optional) Called when the request completes.  The block is passed an NSDictionary object that represents the beacon. If an error occurs, the NSError will be passed to the block.
  */
-+ (void)getBeaconInfoWithId:(NSString *)beaconId success:(void(^)(NSDictionary *beaconInfo))success
-                      failure:(void(^)(NSError *error))failure;
+- (void)createBeaconWithProximityUUID:(NSUUID *)proximityUUID major:(CLBeaconMajorValue)major minor:(CLBeaconMinorValue)minor name:(NSString *)name tags:(NSArray *)tags completionHandler:(void(^)(NSDictionary *beacon, NSError *error))completionHandler;
 
 /**
- This method will return Global beacons.  Beacons without tags are considered global beacons.
- @param success executed when the network request completes without errors.  The success param is passed an array of CLBeaconRegions.
- @param failure executed when the network request fails.  The session and error are passed to the failure block.
+ Gets a beacon from ContextHub using the beacon Id.
+ 
+ @param beaconId The id of the beacon stored in ContextHub.
+ @param completionHandler Called when the request completes.  The block is passed an NSDictionary object that represents the beacon. If an error occurs, the NSError will be passed to the block.
  */
-+ (void)getBeaconRegionsWithSuccess:(void(^)(NSArray *beacons))success
-                            failure:(void(^)(NSError *error))failure;
-
-
-/**
- @param tag to be used in the request.
- @param success executed when the network request completes without errors.  The success param is passed an array of NSDictionary objects that represent iBeacons.
- @param failure executed when the network request fails.  The session and error are passed to the failure block.
- */
-
-+ (void)getBeaconsWithTag:(NSString *)tag success:(void(^)(NSArray *beacons))success
-                   failure:(void(^)(NSError *error))failure;
+- (void)getBeaconWithId:(NSString *)beaconId completionHandler:(void(^)(NSDictionary *beacon, NSError *error))completionHandler;
 
 /**
- @param tag to be used in the request.
- @param success executed when the network request completes without errors.  The success param is passed an array of CLBeaconRegions.
- @param failure executed when the network request fails.  The session and error are passed to the failure block.
+ Gets beacons from the ContextHub server.
+ @param tags (optional) Tags of the beacons that you are interested in.  Passing nil will return beacons without tags.
+ @param completionHandler Called when the request completes.  The block is passed an NSArray of NSDictionary objects that represent iBeacons.  If an error occurs, the NSError will be passed to the block.
  */
-+ (void)getBeaconRegionsWithTag:(NSString *)tag success:(void(^)(NSArray *beacons))success
-                         failure:(void(^)(NSError *error))failure;
-/**
- Create a new beacon in context hub.
- @param beaconRegion beacon to be added to context hub.
- @param completion called when the network request completes.
- */
-+ (void)createBeacon:(CLBeaconRegion *)beaconRegion withCompletion:(void(^)(BOOL successful, NSError *error))completion;
+- (void)getBeaconsWithTags:(NSArray *)tags completionHandler:(void (^)(NSArray *beacons, NSError *error))completionHandler;
 
 /**
- Create a new beacon in context hub with tags.
- @param beaconRegion beacon to be added to context hub.
- @param tags NSArray of tags that will be used to retrieve the beacon
- @param completion called when the network request completes.
+ Updates a beacon on the ContextHub server.
+ @param beacon The beacon to be updated on ContextHub.
+ @param completionHandler Called when the request completes.  If an error occurs, the NSError will be passed to the block.
  */
-+ (void)createBeacon:(CLBeaconRegion *)beaconRegion withTags:(NSArray *)tags withCompletion:(void(^)(BOOL successful, NSError *error))completion;
+- (void)updateBeacon:(NSDictionary *)beacon completionHandler:(void(^)(NSError *error))completionHandler;
 
 /**
- Update an existing beacon in context hub.
- @param beaconInfo beacon to be added to context hub.
- @param completion called when the network request completes.
+ Deletes an existing beacon from ContextHub.
+ @param beacon The beacon to be deleted from ContextHub.
+ @param completionHandler Called when the request completes.  If an error occurs, the NSError will be passed to the block.
  */
-+ (void)updateBeacon:(NSDictionary *)beaconInfo withCompletion:(void(^)(BOOL successful, NSError *error))completion;
+- (void)deleteBeacon:(NSDictionary *)beacon completionHandler:(void(^)(NSError *error))completionHandler;
 
 /**
- Delete an existing beacon in context hub.
- @param beaconInfo beacon to be added to context hub.
- @param completion called when the network request completes.
+ Creates a CLBeaconRegion from a beacon dictionary. 
+ @note This is intended to be used with the beacons that are returned in the CCHBeaconService.
+ @param beacon NSDictionary that contains beacon information.
+ @return A CLBeaconRegion from a beacon dictionary.
  */
-+ (void)deleteBeacon:(NSDictionary *)beaconInfo withCompletion:(void(^)(BOOL successful, NSError *error))completion;
-
-/**
- Creates a CLBeaconRegion from the beaconInfo object returned from ContextHub
- @param beaconInfo NSDictionary that contains beacon information.
- @return CLBeaconRegion that is build using the beaconInfo parmeter.
- */
-+ (CLBeaconRegion *)regionForBeaconInfo:(NSDictionary *)beaconInfo;
++ (CLBeaconRegion *)regionForBeacon:(NSDictionary *)beacon;
 
 
 @end

@@ -1,5 +1,5 @@
 //
-//  CCBGeofenceService.h
+//  CCHGeofenceService.h
 //  ContextHub
 //
 //  Created by Kevin Lee on 10/29/13.
@@ -9,130 +9,106 @@
 #import <CoreLocation/CoreLocation.h>
 #import "ContextHub.h"
 
+#define kGeofenceErrorDomain @"com.contexthub.geofenceservice.error"
+/**
+ ContextHub GeofenceService error codes.
+ */
+typedef NS_ENUM(NSInteger, CCHGeofenceServiceErrorCode) {
+    /**
+     Dictionary can't be used to create a geofence.
+     */
+    CCHInvalidGeofenceDictionary,
+    /**
+    You must pass a center.
+    */
+    CCHInvalidCenterParameter,
+    /**
+     Radius cannot be nil.
+     */
+    CCHInvalidRadiusParameter,
+    /**
+     Name cannot be nil.
+     */
+    CCHInvalidNameParameter,
+    /**
+     Geofence Id cannot be nil.
+     */
+    CCHInvalidIdParameter
+};
+
 /** 
- Used to get CLCircularRegions (geofences) from the ContextHub api.
+ The Geofence Service is used to create, read, update, and delete geofences on ContextHub.
+ 
+ Structure of geofence NSDictionary
+ | key       | value     |
+ | --------- | --------- |
+ | id        | unique id of the geofence on the ContextHub server |
+ | name      | name of the geofence |
+ | latitude  | latitude of the geofence (must be between -90.0 and 90.0) |
+ | longitude | longitude of the geofence (must be between -90.0 and 90.0) |
+ | radius    | radius in meters of the geofence |
+ | tags      | NSArray of tags associated with the geofence |
+ 
  */
-@interface CCHGeofenceService : CLCircularRegion
+@interface CCHGeofenceService : NSObject
 
 /**
- gets global geofences from ContextHub api.  Geofences without tags are considered global geofences.
- @param success executed when the network request completes without errors.  The success param is passed an array of CLCircularRegions.
- @param failure executed when the network request fails.  The session and error are passed to the failure block.
+ @return The singleton instance of the CCHGeofenceService.
  */
-+ (void)getGeofencesWithSuccess:(void(^)(NSArray *fences))success
-                        failure:(void(^)(NSError *error))failure;
++ (instancetype)sharedInstance;
 
 /**
- gets all geofences from ContextHub api.
- @param success executed when the network request completes without errors.  The success param is passed an array of CLCircularRegions.
- @param failure executed when the network request fails.  The session and error are passed to the failure block.
+ Creates a new geofence on the ContextHub server.
+ @note Tags are used to filter geofences and are used by the CCHSubscriptionService
+ 
+ @param center CLLocationCoordinate2D The center coordinate of the geofence.
+ @param radius The radius of to be applied to the geofence.
+ @param name The name of the geofence.
+ @param tags (optional) The tags to be applied to the geofence.
+ @param completionHandler (optional) Called when the request completes.  The block is passed an NSDictionary object that represents the geofence.  If an error occurs, the NSError wil be passed to the block.
  */
-+ (void)getAllGeofenceInfoWithSuccess:(void(^)(NSArray *fences))success
-                        failure:(void(^)(NSError *error))failure;
+- (void)createGeofenceWithCenter:(CLLocationCoordinate2D)center radius:(CLLocationDistance)radius name:(NSString *)name tags:(NSArray *)tags completionHandler:(void(^)(NSDictionary *geofence, NSError *error))completionHandler;
 
 /**
- get geofences from ContextHub api
- @param tag used to filter results.
- @param success executed when the network request completes without errors.  The success param is passed an array of CLCircularRegions.
- @param failure executed when the network request fails.  The session and error are passed to the failure block.
+ Gets a geofence from ContextHub using the geofence Id.
+
+ @param geofenceId The id of the geofence stored in ContextHub.
+ @param completionHandler Called when the request completes. The block is passed an NSDictionary object that represents the geofence.  If an error occurs, the NSError wil be passed to the block.
  */
-+ (void)getGeofencesWithTag:(NSString *)tag success:(void(^)(NSArray *fences))success
-                        failure:(void(^)(NSError *error))failure;
+- (void)getGeofenceWithId:(NSString *)geofenceId completionHandler:(void(^)(NSDictionary *geofence, NSError *error))completionHandler;
 
 /**
- get geofences from ContextHub api
- @param location to be used to find the nearest geofences
- @param success executed when the network request completes without errors.  The success param is passed an array of CLCircularRegions.
- @param failure executed when the network request fails.  The session and error are passed to the failure block.
+ Gets geofences from ContextHub server.
+ 
+ @param tags (optional) Tags of the geofences that you are interested in.  Passing nil will return geofences without tags.
+ @param location (optional) Locatoin is used to filter the results to the nearest geofences.  Passing nil will remove the location filter.
+ @param radius (optional) Radius in meters around the location which ContextHub considers "nearby". Passing nil to location will cause this parameter to be ignored. Passing 0 will use the default radius of 50 miles (80437 meters)
+ @param completionHandler Called when the request completes. The block is passed an NSArray of NSDictionary objects that represent geofences.  If an error occurs, the NSError will be passed to the block.
  */
-
-+ (void)getGeofencesNearLocation:(CLLocation *)location withSuccess:(void(^)(id responseObject))success
-                         failure:(void(^)(NSError *error))failure;
+- (void)getGeofencesWithTags:(NSArray *)tags location:(CLLocation *)location radius:(CLLocationDistance)radius completionHandler:(void(^)(NSArray *geofences, NSError *error))completionHandler;
 
 /**
- get geofences from ContextHub api
- @param tag used to filter results.
- @param location to be used to find the nearest geofences.
- @param success executed when the network request completes without errors.  The success param is passed an array of CLCircularRegions.
- @param failure executed when the network request fails.  The session and error are passed to the failure block.
+ Updates a geofence on the ContextHub server.
+ 
+ @param geofence The geofence to be updated on ContextHub.
+ @param completionHandler Called when the request completes. If an error occurs, the NSError will be passed to the block.
  */
-
-+ (void)getGeofencesWithTag:(NSString *)tag nearLocation:(CLLocation *)location withSuccess:(void(^)(id responseObject))success
-                         failure:(void(^)(NSError *error))failure;
-
+- (void)updateGeofence:(NSDictionary *)geofence completionHandler:(void(^)(NSError *error))completionHandler;
 
 /**
- get geofences from ContextHub api that are near the current location.
- @param success executed when the network request completes without errors.  The success param is passed an array of CLCircularRegions.
- @param failure executed when the network request fails.  The session and error are passed to the failure block.
+ Deletes an existing geofence from ContextHub.
+ 
+ @param geofence The geofence to be deleted from ContextHub.
+ @param completionHandler Called when the request completes. If an error occurs, the NSError will be passed to the block.
  */
-+ (void)getGeofencesNearByWithSuccess:(void(^)(NSArray *geofences))success
-                              failure:(void(^)(NSError *error))failure;
+- (void)deleteGeofence:(NSDictionary *)geofence completionHandler:(void(^)(NSError *error))completionHandler;
 
 /**
- get geofences from ContextHub api that are near the current location.
- @param tag used to filter results
- @param success executed when the network request completes without errors.  The success param is passed an array of CLCircularRegions.
- @param failure executed when the network request fails.  The session and error are passed to the failure block.
+ Creates a CLCircularRegion from a geofence dictionary.
+ 
+ @note This is intended to be used with the geofences that are returned in the CCHGeofenceService.
+ @param geofence NSDictionary that contains geofence information.
+ @return A CLCircularRegion from a geofence dictionary.
  */
-+ (void)getGeofencesNearByWithTag:(NSString *)tag success:(void(^)(NSArray *geofences))success
-                              failure:(void(^)(NSError *error))failure;
-
-
-/**
- get geofences from ContextHub api.  This method is used to retrive geofences so that they can be updated, or deleted.
- @param tag used to filter results.
- @param location to be used to find the nearest geofences.
- @param success executed when the network request completes without errors.  The success param is passed an array of NSDictionary objects that represent geofences.
- @param failure executed when the network request fails.  The session and error are passed to the failure block.
- */
-
-+ (void)getGeofenceInfoWithTag:(NSString *)tag nearLocation:(CLLocation *)location withSuccess:(void(^)(id responseObject))success
-                    failure:(void(^)(NSError *error))failure;
-
-
-
-/**
- gets a geofence from ContextHub api
- @param geofenceId the ContextHub id for the geofence.
- @param success executed when the network request completes without errors.  The success param is passed an array of CLCircularRegions.
- @param failure executed when the network request fails.  The session and error are passed to the failure block.
- */
-+ (void)getGeofenceInfoWithId:(NSString *)geofenceId success:(void(^)(NSDictionary *fenceInfo))success
-                        failure:(void(^)(NSError *error))failure;
-
-/**
-used to create a geofence on the ContextHub server.
-@param region geofence region
-@param completion executed when the network request completes. If successful, a fence info dictionary will be returned.  If an error occurs, the NSError will be returned.
-*/
-+ (void)createGeofence:(CLCircularRegion *)region
-            completion:(void(^)(NSDictionary *fenceInfo, NSError *error))completion;
-
-/**
- used to create a tagged geofence on the ContextHub server.
- @param tags tags used to scope the geofence
- @param region geofence region
- @param completion executed when the network request completes. If successful, a fence info dictionary will be returned.  If an error occurs, the NSError will be returned.
- */
-+ (void)createGeofence:(CLCircularRegion *)region
-              withTags:(NSArray *)tags completion:(void(^)(NSDictionary *fenceInfo, NSError *error))completion;
-
-/**
- used to delete a geofence on the ContextHub server.
- @param fenceInfo is a dictionary that must contain the fence id of the geofence that is to be deleted.
- @param completion executed when the network request completes. an error will be returned if there was a problem deleting the geofence.
- */
-+ (void)deleteGeofence:(NSDictionary *)fenceInfo
-            completion:(void(^)(NSError *error))completion;
-
-/**
- used to update a geofence on the ContextHub server.
- @param fenceInfo is a dictionary that must contain the fence id of the geofence that is to updated.
- @param completion executed when the network request completes. an error will be returned if there was a problem deleting the geofence.
- */
-+ (void)updateGeofence:(NSDictionary *)fenceInfo
-            completion:(void(^)(NSDictionary *fenceInfo, NSError *error))completion;
-
-+ (CLCircularRegion *)regionForFenceInfo:(NSDictionary *)fenceInfo;
++ (CLCircularRegion *)regionForGeofence:(NSDictionary *)geofence;
 @end

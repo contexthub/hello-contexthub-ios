@@ -30,16 +30,16 @@
 
 - (void)createSampleGeofence {
     CLLocationDistance radius = 50;
-    CLCircularRegion *geofence = [[CLCircularRegion alloc] initWithCenter:self.mapView.centerCoordinate radius:radius identifier:@"sample"];
+    CLCircularRegion *sampleGeofence = [[CLCircularRegion alloc] initWithCenter:self.mapView.centerCoordinate radius:radius identifier:@"sample"];
 
     // Create a geofence in ContextHub
-    [CCHGeofenceService createGeofence:geofence completion:^(NSDictionary *fenceInfo, NSError *error) {
+    [[CCHGeofenceService sharedInstance] createGeofenceWithCenter:sampleGeofence.center radius:sampleGeofence.radius name:sampleGeofence.identifier tags:@[@"hello-contexthub"] completionHandler:^(NSDictionary *geofence, NSError *error) {
         if (error) {
             NSLog(@"There was an error while creating the geofence %@", error);
         } else {
-            NSLog(@"Fence response from ContextHub %@", fenceInfo);
+            NSLog(@"Fence response from ContextHub %@", geofence);
             // Place the circle on the map
-            [self placeGeofenceOnMap:geofence];
+            [self placeGeofenceOnMap:sampleGeofence];
         }
     }];
 }

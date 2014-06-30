@@ -10,7 +10,7 @@
 #import <ContextHub/ContextHub.h>
 
 
-@interface HelloContextHubAppDelegate : UIResponder <UIApplicationDelegate, CCHContextEventManagerDelegate, CCHContextEventManagerDataSource>
+@interface HelloContextHubAppDelegate : UIResponder <UIApplicationDelegate, CCHSensorPipelineDataSource, CCHSensorPipelineDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
