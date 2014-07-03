@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1FE83C5519622592000B814A /* ContextHub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE83C5419622592000B814A /* ContextHub.framework */; };
 		3D2CBE56192E841B00E0117A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3D2CBE55192E841B00E0117A /* README.md */; };
-		3D2CBE581934E02A00E0117A /* ContextHub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D2CBE571934E02A00E0117A /* ContextHub.framework */; };
 		3DD1726E192D3AC900D13CE7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DD1726D192D3AC900D13CE7 /* Foundation.framework */; };
 		3DD17270192D3AC900D13CE7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DD1726F192D3AC900D13CE7 /* CoreGraphics.framework */; };
 		3DD17272192D3AC900D13CE7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DD17271192D3AC900D13CE7 /* UIKit.framework */; };
@@ -26,8 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1FE83C5419622592000B814A /* ContextHub.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ContextHub.framework; sourceTree = "<group>"; };
 		3D2CBE55192E841B00E0117A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		3D2CBE571934E02A00E0117A /* ContextHub.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ContextHub.framework; sourceTree = "<group>"; };
 		3DD1726A192D3AC900D13CE7 /* HelloContextHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloContextHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DD1726D192D3AC900D13CE7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3DD1726F192D3AC900D13CE7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -57,7 +57,7 @@
 			files = (
 				3DD172C7192E398D00D13CE7 /* MapKit.framework in Frameworks */,
 				3DD172B9192D414900D13CE7 /* CoreBluetooth.framework in Frameworks */,
-				3D2CBE581934E02A00E0117A /* ContextHub.framework in Frameworks */,
+				1FE83C5519622592000B814A /* ContextHub.framework in Frameworks */,
 				3DD172B7192D414400D13CE7 /* CoreLocation.framework in Frameworks */,
 				3DD172B5192D413B00D13CE7 /* MobileCoreServices.framework in Frameworks */,
 				3DD172B3192D413300D13CE7 /* CoreMotion.framework in Frameworks */,
@@ -91,7 +91,7 @@
 		3DD1726C192D3AC900D13CE7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3D2CBE571934E02A00E0117A /* ContextHub.framework */,
+				1FE83C5419622592000B814A /* ContextHub.framework */,
 				3DD172C6192E398D00D13CE7 /* MapKit.framework */,
 				3DD172B8192D414900D13CE7 /* CoreBluetooth.framework */,
 				3DD172B6192D414400D13CE7 /* CoreLocation.framework */,

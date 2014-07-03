@@ -10,6 +10,6 @@
 #import <ContextHub/ContextHub.h>
 #import <MapKit/MapKit.h>
 
-@interface MapViewController : UIViewController
+@interface MapViewController : UIViewController <MKMapViewDelegate>
 
 @end

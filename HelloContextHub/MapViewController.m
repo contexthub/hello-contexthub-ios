@@ -30,14 +30,38 @@
 
 - (void)createSampleGeofence {
     CLLocationDistance radius = 50;
-    CLCircularRegion *geofence = [[CLCircularRegion alloc] initWithCenter:self.mapView.centerCoordinate radius:radius identifier:@"sample"];
+    CLCircularRegion *sampleGeofence = [[CLCircularRegion alloc] initWithCenter:self.mapView.centerCoordinate radius:radius identifier:@"sample"];
 
-    [CCHGeofenceService createGeofence:geofence completion:^(NSDictionary *fenceInfo, NSError *error) {
+    // Create a geofence in ContextHub
+    [[CCHGeofenceService sharedInstance] createGeofenceWithCenter:sampleGeofence.center radius:sampleGeofence.radius name:sampleGeofence.identifier tags:@[@"hello-contexthub"] completionHandler:^(NSDictionary *geofence, NSError *error) {
         if (error) {
             NSLog(@"There was an error while creating the geofence %@", error);
         } else {
-            NSLog(@"Fence response from ContextHub %@", fenceInfo);
+            NSLog(@"Fence response from ContextHub %@", geofence);
+            // Place the circle on the map
+            [self placeGeofenceOnMap:sampleGeofence];
         }
     }];
 }
+
+- (void)placeGeofenceOnMap:(CLCircularRegion *)geofence {
+    // Place the circle on the map
+    MKCircle *circle = [MKCircle circleWithCenterCoordinate:geofence.center radius:geofence.radius];
+    [self.mapView addOverlay:circle];
+}
+
+#pragma mark - Map View Methods 
+- (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id < MKOverlay >)overlay{
+    if ([overlay isKindOfClass:[MKCircle class]]) {
+        // Draw the circle on the map how we want it (cyan inside with blue border)
+        MKCircleRenderer* aRenderer = [[MKCircleRenderer alloc] initWithCircle:(MKCircle *)overlay];
+        
+        aRenderer.fillColor = [[UIColor cyanColor] colorWithAlphaComponent:0.2];
+        aRenderer.strokeColor = [[UIColor blueColor] colorWithAlphaComponent:0.7];
+        aRenderer.lineWidth = 3;
+        return aRenderer;
+    }
+    return nil;
+}
+
 @end
