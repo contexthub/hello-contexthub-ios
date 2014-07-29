@@ -1,5 +1,8 @@
-## 1.1.1 - July 29, 2014
+## 1.2.0 - July 29, 2014
 - Update to ContextHub v1.1.3 framework
+- Update README
+- Add pin where a geofence is located
+- Add ChaiOne.gpx file
 
 ## 1.1.0 - July 3, 2014
 - Add radius of geofence as a circle

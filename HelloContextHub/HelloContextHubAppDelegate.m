@@ -8,21 +8,22 @@
 
 #import "HelloContextHubAppDelegate.h"
 
+#import "HCHGlobals.h"
 
 @implementation HelloContextHubAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
-    //Register your app id
+    // Register your app id
     [ContextHub registerWithAppId:@"YOUR-APP-ID-HERE"];
     
-    //The context event manager registers contexts and sends event data to the server.
-    
-    //The delegate will be called during the lifecycle of sending context events to the server.
+    // The sensor pipeline registers contexts and sends event data to the server.
+    // The delegate will be called during the lifecycle of sending context events to the server.
+    // Use the datasource methods if you would like to add your own payload to the context event.
     [[CCHSensorPipeline sharedInstance] setDelegate:self];
-    
-    //Use the datasource methods if you would like to add your own payload to the context event.
     [[CCHSensorPipeline sharedInstance] setDataSource:self];
+    
+    // Add a subscription to the Hello ContextHub geofence tag so we start generating events on the server
+    [[CCHSensorPipeline sharedInstance] addSubscriptionForTags:@[HelloContextHubGeofenceTag]];
 
     return YES;
 }
@@ -37,10 +38,12 @@
 }
 
 - (void)sensorPipeline:(CCHSensorPipeline *)sensorPipeline willPostEvent:(NSDictionary *)event {
+    // If you want to access event data directl before it will be posted to the server, you can do that here
     NSLog(@"Will post event: %@", event);
 }
 
 - (void)sensorPipeline:(CCHSensorPipeline *)sensorPipeline didPostEvent:(NSDictionary *)event {
+    // If you want to access event data directly after it has been posted to the server, you can do that here
     NSLog(@"Did post event: %@", event);
 }
 

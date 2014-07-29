@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1F35D71A1987E013001EE319 /* ContextHub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F35D7191987E013001EE319 /* ContextHub.framework */; };
 		1F35D71C1987E150001EE319 /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 1F35D71B1987E150001EE319 /* release_notes.md */; };
+		1F564F391987F7DE00367033 /* ChaiOne.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 1F564F381987F7DE00367033 /* ChaiOne.gpx */; };
 		3D2CBE56192E841B00E0117A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3D2CBE55192E841B00E0117A /* README.md */; };
 		3DD1726E192D3AC900D13CE7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DD1726D192D3AC900D13CE7 /* Foundation.framework */; };
 		3DD17270192D3AC900D13CE7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DD1726F192D3AC900D13CE7 /* CoreGraphics.framework */; };
@@ -29,6 +30,8 @@
 /* Begin PBXFileReference section */
 		1F35D7191987E013001EE319 /* ContextHub.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ContextHub.framework; sourceTree = "<group>"; };
 		1F35D71B1987E150001EE319 /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
+		1F564F371987EFC400367033 /* HCHGlobals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HCHGlobals.h; sourceTree = "<group>"; };
+		1F564F381987F7DE00367033 /* ChaiOne.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ChaiOne.gpx; sourceTree = "<group>"; };
 		3D2CBE55192E841B00E0117A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		3DD1726A192D3AC900D13CE7 /* HelloContextHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloContextHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DD1726D192D3AC900D13CE7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -111,6 +114,8 @@
 		3DD17273192D3AC900D13CE7 /* HelloContextHub */ = {
 			isa = PBXGroup;
 			children = (
+				1F564F381987F7DE00367033 /* ChaiOne.gpx */,
+				1F564F371987EFC400367033 /* HCHGlobals.h */,
 				3DD1727C192D3AC900D13CE7 /* HelloContextHubAppDelegate.h */,
 				3DD1727D192D3AC900D13CE7 /* HelloContextHubAppDelegate.m */,
 				3DD1727F192D3AC900D13CE7 /* Main.storyboard */,
@@ -187,6 +192,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DD17286192D3AC900D13CE7 /* Images.xcassets in Resources */,
+				1F564F391987F7DE00367033 /* ChaiOne.gpx in Resources */,
 				3DD17278192D3AC900D13CE7 /* InfoPlist.strings in Resources */,
 				3D2CBE56192E841B00E0117A /* README.md in Resources */,
 				3DD17281192D3AC900D13CE7 /* Main.storyboard in Resources */,
