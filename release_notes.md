@@ -1,3 +1,6 @@
+Hello ContextHub Release Notes
+---
+
 ## 1.2.0 - July 29, 2014
 - Update to ContextHub v1.1.3 framework
 - Update README
