@@ -1,8 +1,11 @@
-Hello ContextHub Release Notes
----
+# Hello ContextHub Release Notes
+
+## 1.2.2 (Build 100) - August 17, 2014
+- Update to ContextHub v1.2.0 framework
+- Add Table of Contents to README
 
 ## 1.2.1 - August 1, 2014
-- Fix bug where "Create geofence" button was not visible on iPhone 4/4S
+- Fix bug where "Create Geofence" button was not visible on iPhone 4/4S
 
 ## 1.2.0 - July 29, 2014
 - Update to ContextHub v1.1.3 framework

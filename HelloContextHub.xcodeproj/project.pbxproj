@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F35D71A1987E013001EE319 /* ContextHub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F35D7191987E013001EE319 /* ContextHub.framework */; };
 		1F35D71C1987E150001EE319 /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 1F35D71B1987E150001EE319 /* release_notes.md */; };
 		1F564F391987F7DE00367033 /* ChaiOne.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 1F564F381987F7DE00367033 /* ChaiOne.gpx */; };
+		1F9DC44C19A1687600696CB2 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 1F9DC44B19A1687600696CB2 /* LICENSE */; };
+		1F9DC44E19A1689200696CB2 /* ContextHub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F9DC44D19A1689200696CB2 /* ContextHub.framework */; };
 		3D2CBE56192E841B00E0117A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3D2CBE55192E841B00E0117A /* README.md */; };
 		3DD1726E192D3AC900D13CE7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DD1726D192D3AC900D13CE7 /* Foundation.framework */; };
 		3DD17270192D3AC900D13CE7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DD1726F192D3AC900D13CE7 /* CoreGraphics.framework */; };
@@ -23,15 +24,15 @@
 		3DD172B3192D413300D13CE7 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DD172B2192D413300D13CE7 /* CoreMotion.framework */; };
 		3DD172B5192D413B00D13CE7 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DD172B4192D413B00D13CE7 /* MobileCoreServices.framework */; };
 		3DD172B7192D414400D13CE7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DD172B6192D414400D13CE7 /* CoreLocation.framework */; };
-		3DD172B9192D414900D13CE7 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DD172B8192D414900D13CE7 /* CoreBluetooth.framework */; };
 		3DD172C7192E398D00D13CE7 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DD172C6192E398D00D13CE7 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1F35D7191987E013001EE319 /* ContextHub.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ContextHub.framework; sourceTree = "<group>"; };
 		1F35D71B1987E150001EE319 /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
 		1F564F371987EFC400367033 /* HCHGlobals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HCHGlobals.h; sourceTree = "<group>"; };
 		1F564F381987F7DE00367033 /* ChaiOne.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ChaiOne.gpx; sourceTree = "<group>"; };
+		1F9DC44B19A1687600696CB2 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		1F9DC44D19A1689200696CB2 /* ContextHub.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ContextHub.framework; sourceTree = "<group>"; };
 		3D2CBE55192E841B00E0117A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		3DD1726A192D3AC900D13CE7 /* HelloContextHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloContextHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DD1726D192D3AC900D13CE7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -51,7 +52,6 @@
 		3DD172B2192D413300D13CE7 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		3DD172B4192D413B00D13CE7 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		3DD172B6192D414400D13CE7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		3DD172B8192D414900D13CE7 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		3DD172C6192E398D00D13CE7 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -61,11 +61,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DD172C7192E398D00D13CE7 /* MapKit.framework in Frameworks */,
-				3DD172B9192D414900D13CE7 /* CoreBluetooth.framework in Frameworks */,
-				1F35D71A1987E013001EE319 /* ContextHub.framework in Frameworks */,
 				3DD172B7192D414400D13CE7 /* CoreLocation.framework in Frameworks */,
 				3DD172B5192D413B00D13CE7 /* MobileCoreServices.framework in Frameworks */,
 				3DD172B3192D413300D13CE7 /* CoreMotion.framework in Frameworks */,
+				1F9DC44E19A1689200696CB2 /* ContextHub.framework in Frameworks */,
 				3DD17270192D3AC900D13CE7 /* CoreGraphics.framework in Frameworks */,
 				3DD17272192D3AC900D13CE7 /* UIKit.framework in Frameworks */,
 				3DD1726E192D3AC900D13CE7 /* Foundation.framework in Frameworks */,
@@ -78,11 +77,12 @@
 		3DD17261192D3AC900D13CE7 = {
 			isa = PBXGroup;
 			children = (
-				3D2CBE55192E841B00E0117A /* README.md */,
-				1F35D71B1987E150001EE319 /* release_notes.md */,
 				3DD17273192D3AC900D13CE7 /* HelloContextHub */,
 				3DD1726C192D3AC900D13CE7 /* Frameworks */,
 				3DD1726B192D3AC900D13CE7 /* Products */,
+				3D2CBE55192E841B00E0117A /* README.md */,
+				1F35D71B1987E150001EE319 /* release_notes.md */,
+				1F9DC44B19A1687600696CB2 /* LICENSE */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,8 +97,7 @@
 		3DD1726C192D3AC900D13CE7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1F35D7191987E013001EE319 /* ContextHub.framework */,
-				3DD172B8192D414900D13CE7 /* CoreBluetooth.framework */,
+				1F9DC44D19A1689200696CB2 /* ContextHub.framework */,
 				3DD1726F192D3AC900D13CE7 /* CoreGraphics.framework */,
 				3DD172B6192D414400D13CE7 /* CoreLocation.framework */,
 				3DD172B2192D413300D13CE7 /* CoreMotion.framework */,
@@ -147,6 +146,7 @@
 			buildPhases = (
 				3DD17266192D3AC900D13CE7 /* Sources */,
 				3DD17267192D3AC900D13CE7 /* Frameworks */,
+				1F9DC44F19A1691C00696CB2 /* ShellScript */,
 				3DD17268192D3AC900D13CE7 /* Resources */,
 			);
 			buildRules = (
@@ -194,6 +194,7 @@
 				3DD17286192D3AC900D13CE7 /* Images.xcassets in Resources */,
 				1F564F391987F7DE00367033 /* ChaiOne.gpx in Resources */,
 				3DD17278192D3AC900D13CE7 /* InfoPlist.strings in Resources */,
+				1F9DC44C19A1687600696CB2 /* LICENSE in Resources */,
 				3D2CBE56192E841B00E0117A /* README.md in Resources */,
 				3DD17281192D3AC900D13CE7 /* Main.storyboard in Resources */,
 				1F35D71C1987E150001EE319 /* release_notes.md in Resources */,
@@ -201,6 +202,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1F9DC44F19A1691C00696CB2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/bash\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3DD17266192D3AC900D13CE7 /* Sources */ = {
