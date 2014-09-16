@@ -1,5 +1,5 @@
 //
-//  HellowcontextHubAppDelegate.m
+//  HelloContextHubAppDelegate.m
 //  HelloContextHub
 //
 //  Created by Kevin Lee on 5/21/14.
@@ -13,7 +13,16 @@
 @implementation HelloContextHubAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Register your app id
+#ifdef DEBUG
+    // The debug flag is automatically set by the compiler, indicating which push gateway server your device will use
+    // Xcode deployed builds use the sandbox/development server
+    // TestFlight/App Store builds use the production server
+    // ContextHub records which environment a device is using so push works properly
+    // This must be called BEFORE [ContextHub registerWithAppId:]
+    [[ContextHub sharedInstance] setDebug:TRUE];
+#endif
+    
+    // Register the app id of the application you created on https://app.contexthub.com
     [ContextHub registerWithAppId:@"YOUR-APP-ID-HERE"];
     
     // The sensor pipeline registers contexts and sends event data to the server.
@@ -23,8 +32,12 @@
     [[CCHSensorPipeline sharedInstance] setDataSource:self];
     
     // Add a subscription to the Hello ContextHub geofence tag so we start generating events on the server
-    [[CCHSensorPipeline sharedInstance] addSubscriptionForTags:@[HelloContextHubGeofenceTag]];
-
+    if ([[CCHSensorPipeline sharedInstance] addElementsWithTags:@[HelloContextHubGeofenceTag]]) {
+        NSLog(@"Successfully added elements with tags '%@' to CCHSensorPipeline", HelloContextHubGeofenceTag);
+    } else {
+        NSLog(@"Error adding elements with tags '%@' to CCHSensorPipeline", HelloContextHubGeofenceTag);
+    }
+    
     return YES;
 }
 

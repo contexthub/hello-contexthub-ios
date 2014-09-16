@@ -113,13 +113,13 @@
 		3DD17273192D3AC900D13CE7 /* HelloContextHub */ = {
 			isa = PBXGroup;
 			children = (
-				1F564F381987F7DE00367033 /* ChaiOne.gpx */,
 				1F564F371987EFC400367033 /* HCHGlobals.h */,
 				3DD1727C192D3AC900D13CE7 /* HelloContextHubAppDelegate.h */,
 				3DD1727D192D3AC900D13CE7 /* HelloContextHubAppDelegate.m */,
-				3DD1727F192D3AC900D13CE7 /* Main.storyboard */,
 				3DD17282192D3AC900D13CE7 /* MapViewController.h */,
 				3DD17283192D3AC900D13CE7 /* MapViewController.m */,
+				1F564F381987F7DE00367033 /* ChaiOne.gpx */,
+				3DD1727F192D3AC900D13CE7 /* Main.storyboard */,
 				3DD17285192D3AC900D13CE7 /* Images.xcassets */,
 				3DD17274192D3AC900D13CE7 /* Supporting Files */,
 			);
