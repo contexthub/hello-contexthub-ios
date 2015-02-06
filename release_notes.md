@@ -1,6 +1,14 @@
 # Hello ContextHub Sample App Release Notes
 ---
 
+## v1.2.5 (Build 138) - February 5, 2015
+- Update to ContextHub v1.6 framework
+- Ask for iOS 8 location permissions on app first launch
+
+## v1.2.4 (Build 124) - October 17, 2014
+- Update to ContextHub v1.3.3 framework
+- Update compatibility for iPhone 6 and 6+
+
 ## v1.2.3 (Build 104) - September 17, 2014
 - Update to ContextHub v1.3.1 framework
 - Update compatibility for iOS 8 
