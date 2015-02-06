@@ -18,9 +18,17 @@
 
 @implementation MapViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    // iOS 8 Location Authorization
+    CLLocationManager *locationManager = [[CLLocationManager alloc] init];
+    if ([locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
+        [locationManager requestAlwaysAuthorization];
+    }
+    
+    // Do any additional setup after loading the view, typically from a nib.
+    self.mapView.showsUserLocation = YES;
 }
 
 #pragma mark - Actions
